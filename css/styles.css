@@ -774,6 +774,7 @@ img {
   color: #ffffff;
 }
 
-.portfolio-link:hover .overlay-text {
+.portfolio-link:hover .overlay-text,
+.portfolio-link:focus .overlay-text {
   transform: translateY(0);
 }
