@@ -234,12 +234,14 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 3;
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .backdrop.is-hidden .modal {
@@ -376,10 +378,12 @@ img {
 
 .aboutus-box {
   display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   width: 370px;
   height: 70px;
-  padding: 27px 82px;
   bottom: 0;
   position: absolute;
   background-color: rgba(47, 48, 58, 0.8);
@@ -465,11 +469,16 @@ img {
   height: 44px;
   width: 44px;
   margin: 0 auto;
-  fill: #afb1b8;
+  color: #afb1b8;
   background-color: #ffffff;
   border-radius: 50%;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-icone {
+  fill: currentColor;
 }
 
 .icone-link:not(:last-child) {
@@ -483,7 +492,7 @@ img {
 
 .icone-link:hover .team-icone,
 .icone-link:focus .team-icone {
-  fill: #ffffff;
+  color: #ffffff;
 }
 
 /*===Clients===*/
@@ -754,10 +763,8 @@ img {
   padding: 63px 24px;
   width: 100%;
   background-color: rgba(33, 150, 243, 0.9);
-
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
 }
 
 .overlay-content {
@@ -767,7 +774,6 @@ img {
   color: #ffffff;
 }
 
-.portfolio-list-iteam:hover .overlay-text {
+.portfolio-link:hover .overlay-text {
   transform: translateY(0);
-  opacity: 1;
 }
